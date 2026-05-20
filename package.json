@@ -10,17 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/khushbu-hasija/swiggy-clone.git"
   },
-  "keywords": [
-    "react",
-    "clone",
-    "food",
-    "delivery",
-    "app"
-  ],
   "author": "Khushbu Hasija",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/khushbu-hasija/swiggy-clone/issues"
   },
-  "homepage": "https://github.com/khushbu-hasija/swiggy-clone#readme"
+  "homepage": "https://github.com/khushbu-hasija/swiggy-clone#readme",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
 }
