@@ -801,7 +801,7 @@ const Header = ()=>{
     }, undefined);
 };
 _c = Header;
-const RestaurantCard = ()=>{
+const RestaurantCard = (props)=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "res-card",
         children: [
