@@ -4,7 +4,7 @@ Building a Food ordering app from scratch to learn advanced ReactJS techniques, 
 
 ## Issue Log
 
-### 1. Importing image from local source in React + Parcel build
+1. Importing image from local source in React + Parcel build
 
 This tells Parcel to give me the bundled URL of this asset 
 ```
