@@ -1,12 +1,31 @@
 import React from "react";
 import ReactDom from "react-dom/client";
+import logo from 'url:./assets/logo.jpg'
 
-const parent = React.createElement("div", {id:"parent"}, [
-    React.createElement("h1", {}, "Hellow")
-])
+const Header = () => {
+    return (
+        <div className="header">
+            <div className="logo-container">
+                <img className="logo" src={logo} />
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>              
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+        </div>
+    )
+}
 
-console.log(parent)
+const AppLayout = () => {
+    return <div className="app">
+        <Header />
+    </div>;
+};
 
 const root = ReactDom.createRoot(document.getElementById("root"));
 
-root.render(parent)
+root.render(<AppLayout />)
