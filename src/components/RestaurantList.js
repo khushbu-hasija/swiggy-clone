@@ -28,17 +28,31 @@ function RestaurantList() {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <div className="res-container">
-      {restaurants.map((restaurant) => {
-        if (restaurant.info.cloudinaryImageId.startsWith("RX"))
-          return (
-            <RestaurantCard
-              key={restaurant.info.id}
-              restaurantInfo={restaurant.info}
-            />
-          );
-      })}
-    </div>
+    <>
+      <div className="filter">
+        <button
+          onClick={() => {
+            const filteredList = restaurants.filter(
+              (res) => res.info.avgRating > 4.3,
+            );
+            setRestaurants(filteredList);
+          }}
+        >
+          Top Restaurants
+        </button>
+      </div>
+      <div className="res-container">
+        {restaurants.map((restaurant) => {
+          if (restaurant.info.cloudinaryImageId.startsWith("RX"))
+            return (
+              <RestaurantCard
+                key={restaurant.info.id}
+                restaurantInfo={restaurant.info}
+              />
+            );
+        })}
+      </div>
+    </>
   );
 }
 
