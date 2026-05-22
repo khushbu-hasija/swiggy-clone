@@ -45,7 +45,8 @@ body {
   border: 1px solid #000;
 }
 
-.search {
-  padding: 10px;
+.filter {
+  padding: 12px 12px 12px 0;
+  display: flex;
 }
 /*# sourceMappingURL=namaste react.9e4c6fd2.css.map */

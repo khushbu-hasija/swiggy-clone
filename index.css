@@ -45,6 +45,7 @@ body {
   border: 1px solid black;
 }
 
-.search {
-  padding: 10px;
+.filter {
+  padding: 12px 12px 12px 0;
+  display: flex;
 }

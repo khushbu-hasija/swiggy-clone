@@ -5,7 +5,9 @@ import Shimmer from "./Shimmer";
 
 function RestaurantList() {
   const [restaurants, setRestaurants] = useState([]);
+  const [allrestaurants, setAllRestaurants] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchRestaurants();
@@ -18,6 +20,7 @@ function RestaurantList() {
       const restaurantData =
         json.data.data.cards[1]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants;
+      setAllRestaurants(restaurantData || []);
       setRestaurants(restaurantData || []);
     } catch (error) {
       console.error("Error:", error);
@@ -29,7 +32,29 @@ function RestaurantList() {
   return (
     <>
       <div className="filter">
+        <div className="search-container">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            className="search-button"
+            onClick={() => {
+              const searchedList = allrestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase()),
+              );
+              setRestaurants(searchedList);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
+          className="top-res-button"
           onClick={() => {
             const filteredList = restaurants.filter(
               (res) => res.info.avgRating > 4.3,
