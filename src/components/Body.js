@@ -1,10 +1,10 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantList from "./RestaurantList";
 
 const Body = () => {
   return (
     <div className="body">
       <div className="search">Search</div>
-      <RestaurantCard />
+      <RestaurantList />
     </div>
   );
 };

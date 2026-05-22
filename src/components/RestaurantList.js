@@ -1,6 +1,10 @@
-import img1 from "url:../../assets/cards/img1.png";
+import {
+  RESTAURANT_LIST_IMAGES_URL,
+  RESTAURANT_LIST_URL,
+} from "../utils/constants";
 import { useState, useEffect } from "react";
-function RestaurantCard() {
+
+function RestaurantList() {
   const [restaurants, setRestaurants] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -10,9 +14,7 @@ function RestaurantCard() {
 
   const fetchRestaurants = async () => {
     try {
-      const response = await fetch(
-        "https://corsproxy.io/?url=https://namastedev.com/api/v1/listRestaurants",
-      );
+      const response = await fetch(RESTAURANT_LIST_URL);
       const json = await response.json();
       const restaurantData =
         json.data.data.cards[1]?.card?.card?.gridElements?.infoWithStyle
@@ -32,14 +34,14 @@ function RestaurantCard() {
   return (
     <div className="res-container">
       {restaurants.map((restaurant) => {
+        console.log(RESTAURANT_LIST_IMAGES_URL);
         return (
           <div className="res-card" key={restaurant.info.id}>
             <img
               className="res-image"
               alt="res-image"
               src={
-                "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-                restaurant.info.cloudinaryImageId
+                RESTAURANT_LIST_IMAGES_URL + restaurant.info.cloudinaryImageId
               }
             />
             <h3>{restaurant.info.name}</h3>
@@ -52,4 +54,4 @@ function RestaurantCard() {
   );
 }
 
-export default RestaurantCard;
+export default RestaurantList;
