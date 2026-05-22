@@ -1,6 +1,7 @@
 import { RESTAURANT_LIST_URL } from "../utils/constants";
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 function RestaurantList() {
   const [restaurants, setRestaurants] = useState([]);
@@ -25,8 +26,6 @@ function RestaurantList() {
     }
   };
 
-  if (loading) return <div>Loading...</div>;
-
   return (
     <>
       <div className="filter">
@@ -41,17 +40,21 @@ function RestaurantList() {
           Top Restaurants
         </button>
       </div>
-      <div className="res-container">
-        {restaurants.map((restaurant) => {
-          if (restaurant.info.cloudinaryImageId.startsWith("RX"))
-            return (
-              <RestaurantCard
-                key={restaurant.info.id}
-                restaurantInfo={restaurant.info}
-              />
-            );
-        })}
-      </div>
+      {!loading ? (
+        <div className="res-container">
+          {restaurants.map((restaurant) => {
+            if (restaurant.info.cloudinaryImageId.startsWith("RX"))
+              return (
+                <RestaurantCard
+                  key={restaurant.info.id}
+                  restaurantInfo={restaurant.info}
+                />
+              );
+          })}
+        </div>
+      ) : (
+        <Shimmer />
+      )}
     </>
   );
 }
