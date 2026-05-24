@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { RESTAURANT_MENU_URL } from "../utils/constants";
+import { RESTAURANT_MENU_URL, ITEM_CATEGORY } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 
@@ -25,9 +25,7 @@ function RestaurantMenu() {
       // Open all categories initially
       const categories =
         menuData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-          (category) =>
-            category?.card?.card?.["@type"] ===
-            "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+          (category) => category?.card?.card?.["@type"] === ITEM_CATEGORY,
         ) || [];
 
       const initialOpenState = {};
@@ -51,9 +49,7 @@ function RestaurantMenu() {
 
   const categories =
     resMenu[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-      (category) =>
-        category?.card?.card?.["@type"] ===
-        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+      (category) => category?.card?.card?.["@type"] === ITEM_CATEGORY,
     ) || [];
 
   const toggleCategory = (index) => {
@@ -75,25 +71,10 @@ function RestaurantMenu() {
         const categoryInfo = category?.card?.card;
 
         return (
-          <div
-            key={categoryInfo?.title}
-            className="menu-category"
-            style={{
-              marginTop: "24px",
-            }}
-          >
+          <div key={categoryInfo?.title} className="menu-category">
             <div
               className="category-header"
               onClick={() => toggleCategory(index)}
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                cursor: "pointer",
-                background: "#f5f5f5",
-                padding: "12px 16px",
-                borderRadius: "8px",
-              }}
             >
               <h2
                 style={{
@@ -119,14 +100,7 @@ function RestaurantMenu() {
                   const info = item?.card?.info;
 
                   return (
-                    <div
-                      key={info?.id}
-                      className="menu-item"
-                      style={{
-                        borderBottom: "1px solid #e0e0e0",
-                        padding: "16px 8px",
-                      }}
-                    >
+                    <div key={info?.id} className="menu-item">
                       <h3>{info?.name}</h3>
 
                       <p>₹{(info?.price || info?.defaultPrice) / 100}</p>

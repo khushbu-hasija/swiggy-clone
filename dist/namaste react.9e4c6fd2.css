@@ -165,6 +165,7 @@ a {
 .menu-category {
   background-color: #fff;
   border-radius: 18px;
+  margin-top: 24px;
   margin-bottom: 24px;
   transition: transform .2s, box-shadow .2s;
   overflow: hidden;
@@ -178,10 +179,11 @@ a {
 
 .category-header {
   cursor: pointer;
-  background-color: #fff;
+  background-color: #f5f5f5;
+  border-radius: 8px;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 24px;
+  padding: 12px 16px;
   transition: background-color .2s;
   display: flex;
 }
@@ -208,8 +210,8 @@ a {
 }
 
 .menu-item {
-  border-bottom: 1px solid #ececec;
-  padding: 20px 0;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 16px 8px;
 }
 
 .menu-item:last-child {

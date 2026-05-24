@@ -195,6 +195,7 @@ a {
 /* CATEGORY CARD */
 
 .menu-category {
+  margin-top: 24px;
   background-color: white;
   border-radius: 18px;
   overflow: hidden;
@@ -216,9 +217,10 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 24px;
+  padding: 12px 16px;
+  border-radius: 8px;
   cursor: pointer;
-  background-color: white;
+  background-color: #f5f5f5;
   transition: background-color 0.2s ease;
 }
 
@@ -250,8 +252,8 @@ a {
 /* SINGLE ITEM */
 
 .menu-item {
-  padding: 20px 0;
-  border-bottom: 1px solid #ececec;
+  padding: 16px 8px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .menu-item:last-child {

@@ -6,3 +6,6 @@ export const RESTAURANT_LIST_URL =
 
 export const RESTAURANT_MENU_URL =
   "https://corsproxy.io/?url=https://namastedev.com/api/v1/listRestaurantMenu/";
+
+export const ITEM_CATEGORY =
+  "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";
