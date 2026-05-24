@@ -2,6 +2,7 @@ import { RESTAURANT_LIST_URL } from "../utils/constants";
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 function RestaurantList() {
   const [restaurants, setRestaurants] = useState([]);
@@ -70,10 +71,12 @@ function RestaurantList() {
           {restaurants.map((restaurant) => {
             if (restaurant.info.cloudinaryImageId.startsWith("RX"))
               return (
-                <RestaurantCard
+                <Link
                   key={restaurant.info.id}
-                  restaurantInfo={restaurant.info}
-                />
+                  to={"/restaurant/" + restaurant.info.id}
+                >
+                  <RestaurantCard restaurantInfo={restaurant.info} />
+                </Link>
               );
           })}
         </div>
