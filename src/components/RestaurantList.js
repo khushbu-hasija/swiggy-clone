@@ -1,6 +1,6 @@
 import { RESTAURANT_LIST_URL } from "../utils/constants";
 import { useState, useEffect } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
@@ -32,6 +32,8 @@ function RestaurantList() {
       setLoading(false);
     }
   };
+
+  const RestaurantCardWithLabel = withPromotedLabel(RestaurantCard);
 
   return (
     <div className="mx-auto max-w-7xl">
@@ -93,7 +95,11 @@ function RestaurantList() {
                   to={"/restaurant/" + restaurant.info.id}
                   className="transition hover:scale-[1.02]"
                 >
-                  <RestaurantCard restaurantInfo={restaurant.info} />
+                  {!restaurant.info.veg ? (
+                    <RestaurantCard restaurantInfo={restaurant.info} />
+                  ) : (
+                    <RestaurantCardWithLabel restaurantInfo={restaurant.info} />
+                  )}
                 </Link>
               );
           })}
