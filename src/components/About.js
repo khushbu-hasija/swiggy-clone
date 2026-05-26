@@ -1,43 +1,59 @@
 const About = () => {
   return (
-    <div className="about-page">
-      <div className="about-hero">
-        <h1>About Mr. Foodie 🍕</h1>
+    <div className="min-h-screen bg-gray-50 px-6 py-16">
+      <div className="mx-auto max-w-5xl">
+        {/* HERO */}
 
-        <p>
-          Discover restaurants, explore menus, and order your favorite meals —
-          all in one place.
-        </p>
-      </div>
+        <div className="text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-orange-500">
+            About Us
+          </p>
 
-      <div className="about-content">
-        <div className="about-card">
-          <h2>🍔 Our Mission</h2>
+          <h1 className="mt-4 text-4xl font-bold text-gray-900">
+            Welcome to Mr. Foodie 🍕
+          </h1>
 
-          <p>
-            Mr. Foodie was built to make food discovery simple, beautiful, and
-            fast. We connect food lovers with amazing restaurants and menus
-            through a clean and modern experience.
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">
+            Mr. Foodie is a modern food discovery app where users can explore
+            restaurants, browse menus, and discover great meals with a clean and
+            simple experience.
           </p>
         </div>
 
-        <div className="about-card">
-          <h2>⚡ Fast Experience</h2>
+        {/* CONTENT */}
 
-          <p>
-            Built using modern technologies like ReactJS, Redux Toolkit, Jest
-            for robust testing, and TailWind CSS to create a beautiful user
-            experience.
-          </p>
-        </div>
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
+          <div className="rounded-2xl bg-white p-6 shadow-sm">
+            <h2 className="text-lg font-semibold text-gray-900">
+              🍔 Discover Food
+            </h2>
 
-        <div className="about-card">
-          <h2>❤️ Made for Food Lovers</h2>
+            <p className="mt-3 text-sm leading-7 text-gray-600">
+              Explore restaurants, cuisines, ratings, and offers all in one
+              place.
+            </p>
+          </div>
 
-          <p>
-            Whether you love pizzas, burgers, desserts, or healthy meals, Mr.
-            Foodie helps you discover something delicious every day.
-          </p>
+          <div className="rounded-2xl bg-white p-6 shadow-sm">
+            <h2 className="text-lg font-semibold text-gray-900">
+              ⚡ Fast Experience
+            </h2>
+
+            <p className="mt-3 text-sm leading-7 text-gray-600">
+              Built with React and Tailwind CSS for a clean and responsive user
+              experience.
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-white p-6 shadow-sm">
+            <h2 className="text-lg font-semibold text-gray-900">
+              ❤️ Made for Foodies
+            </h2>
+
+            <p className="mt-3 text-sm leading-7 text-gray-600">
+              From pizzas to desserts, discover something delicious every day.
+            </p>
+          </div>
         </div>
       </div>
     </div>
