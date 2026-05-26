@@ -15,8 +15,8 @@ const About = () => {
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">
             Mr. Foodie is a modern food discovery app where users can explore
-            restaurants, browse menus, and discover great meals with a clean and
-            simple experience.
+            restaurants, browse menus, and discover great meals fetched from
+            real APIs
           </p>
         </div>
 
