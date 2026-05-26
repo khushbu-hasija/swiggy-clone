@@ -69,7 +69,13 @@ const Footer = () => {
       {/* BOTTOM BAR */}
 
       <div className="relative border-t border-orange-100 bg-orange-50/40 py-5 text-center text-sm text-gray-600">
-        mr. foodie © 2026 Built with 🧡 by Khushbu
+        mr. foodie © 2026 Built with 🧡 by{" "}
+        <a
+          className="transition hover:text-orange-500 underline"
+          href="https://www.linkedin.com/in/khushbu-hasija/"
+        >
+          Khushbu
+        </a>
       </div>
     </footer>
   );
