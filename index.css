@@ -497,3 +497,106 @@ a {
   padding: 12px;
   border-radius: 12px;
 }
+/* RESTAURANT MENU */
+
+.restaurant-menu {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 24px 40px;
+}
+
+.restaurant-menu h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #1c1c1c;
+}
+
+.restaurant-subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 32px;
+}
+
+/* CATEGORY CARD */
+
+.menu-category {
+  background-color: white;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.menu-category:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* HEADER */
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+.category-header:hover {
+  background-color: #fafafa;
+}
+
+.category-title {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #1c1c1c;
+  font-weight: 600;
+}
+
+/* ICON */
+
+.collapse-icon {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #555;
+}
+
+/* ITEMS */
+
+.category-items {
+  padding: 0 24px 12px;
+}
+
+.menu-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1c1c1c;
+}
+
+.item-price {
+  font-weight: 700;
+  color: #116649;
+  margin: 0 0 10px;
+}
+
+.item-description {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}

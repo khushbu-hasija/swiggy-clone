@@ -1,44 +1,15 @@
-import { useEffect, useState } from "react";
-import { RESTAURANT_MENU_URL, ITEM_CATEGORY } from "../utils/constants";
+import { useState } from "react";
+import { ITEM_CATEGORY } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 function RestaurantMenu() {
-  const [resMenu, setResMenu] = useState([]);
   const [openCategories, setOpenCategories] = useState({});
 
   const { resId } = useParams();
-  useEffect(() => {
-    fetchRestaurantMenu();
-  }, []);
 
-  const fetchRestaurantMenu = async () => {
-    try {
-      const response = await fetch(RESTAURANT_MENU_URL + resId);
-
-      const json = await response.json();
-
-      const menuData = json.data.cards || [];
-
-      setResMenu(menuData);
-
-      // Open all categories initially
-      const categories =
-        menuData[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-          (category) => category?.card?.card?.["@type"] === ITEM_CATEGORY,
-        ) || [];
-
-      const initialOpenState = {};
-
-      categories.forEach((_, index) => {
-        initialOpenState[index] = true;
-      });
-
-      setOpenCategories(initialOpenState);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
+  const resMenu = useRestaurantMenu(resId);
 
   if (resMenu.length === 0) {
     return <Shimmer />;
@@ -63,7 +34,7 @@ function RestaurantMenu() {
     <div className="restaurant-menu">
       <h1>{name}</h1>
 
-      <p>
+      <p className="restaurant-subtitle">
         {cuisines?.join(", ")} • {costForTwoMessage}
       </p>
 
@@ -76,20 +47,11 @@ function RestaurantMenu() {
               className="category-header"
               onClick={() => toggleCategory(index)}
             >
-              <h2
-                style={{
-                  margin: 0,
-                }}
-              >
+              <h2 className="category-title">
                 {categoryInfo?.title} ({categoryInfo?.itemCards?.length})
               </h2>
 
-              <span
-                style={{
-                  fontSize: "20px",
-                  fontWeight: "bold",
-                }}
-              >
+              <span className="collapse-icon">
                 {openCategories[index] ? "▲" : "▼"}
               </span>
             </div>
@@ -103,9 +65,11 @@ function RestaurantMenu() {
                     <div key={info?.id} className="menu-item">
                       <h3>{info?.name}</h3>
 
-                      <p>₹{(info?.price || info?.defaultPrice) / 100}</p>
+                      <p className="item-price">
+                        ₹{(info?.price || info?.defaultPrice) / 100}
+                      </p>
 
-                      <p>{info?.description}</p>
+                      <p className="item-description">{info?.description}</p>
                     </div>
                   );
                 })}
