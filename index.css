@@ -600,3 +600,28 @@ a {
   line-height: 1.5;
   font-size: 0.95rem;
 }
+
+/* OFFLINE SCREEN */
+
+.offline-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.offline-container h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+  color: #1c1c1c;
+}
+
+.offline-container p {
+  max-width: 500px;
+  color: #666;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}

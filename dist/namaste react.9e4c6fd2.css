@@ -469,4 +469,27 @@ a {
   font-size: .95rem;
   line-height: 1.5;
 }
+
+.offline-container {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 24px;
+  display: flex;
+}
+
+.offline-container h1 {
+  color: #1c1c1c;
+  margin-bottom: 12px;
+  font-size: 2.4rem;
+}
+
+.offline-container p {
+  color: #666;
+  max-width: 500px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
 /*# sourceMappingURL=namaste react.9e4c6fd2.css.map */
