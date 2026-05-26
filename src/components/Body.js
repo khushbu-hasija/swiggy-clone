@@ -10,9 +10,9 @@ const Body = () => {
   }
 
   return (
-    <div className="body">
+    <main className="min-h-screen bg-gray-50 px-4 py-6">
       <RestaurantList />
-    </div>
+    </main>
   );
 };
 
