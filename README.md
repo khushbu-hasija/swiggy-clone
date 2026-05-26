@@ -11,3 +11,5 @@ import logo from 'url:./assets/logo.jpg'
 ```
 
 This tells Parcel to give me the bundled URL of this asset
+
+When internet disconnects browser loses connection to the dev server websocket/assets. The image won't load in dev server, you need to build your app and then test for offline image loading.
