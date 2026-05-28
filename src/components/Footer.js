@@ -58,7 +58,7 @@ const Footer = () => {
             <div className="mt-4 space-y-3 text-sm text-gray-600">
               <p>📍 Mumbai, Maharashtra</p>
 
-              <p>📞 +91 98765 43210</p>
+              <p>📞 +91 9XXXX XX685</p>
 
               <p>📧 support@mrfoodie.com</p>
             </div>

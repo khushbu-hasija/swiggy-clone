@@ -108,7 +108,7 @@ const ContactUs = () => {
             <h2 className="mt-4 text-lg font-semibold text-gray-900">Phone</h2>
 
             <p className="mt-2 text-sm leading-6 text-gray-600">
-              +91 98765 43210
+              +91 9XXXX XX685npm install @reduxjs/toolkit
               <br />
               Mon - Sun · 9 AM - 11 PM
             </p>
